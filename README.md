@@ -14,7 +14,9 @@
 
 ## Demo
 
+Engels:  https://nuxt-enterprise.netlify.com/
 
+French: https://nuxt-enterprise.netlify.com/fr
 
 ## Build Setup
 
