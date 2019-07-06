@@ -35,7 +35,7 @@ export default {
     // Doc: https://bootstrap-vue.js.org/docs/
     "bootstrap-vue/nuxt",
     "@nuxtjs/style-resources",
-    "@nuxtjs/axios"
+    ["@nuxtjs/axios", { baseURL: "http://jsonplaceholder.typicode.com" }]
   ],
 
   styleResources: {
