@@ -8,7 +8,7 @@
     "test": "jest",
     "dev": "API_URL=http://jsonplaceholder.typicode.com nuxt",
     "build": "nuxt build",
-    
+    "build:analyze": "nuxt build -a",
     "start": "nuxt start",
     "generate": "nuxt generate"
   },
