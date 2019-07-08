@@ -27,7 +27,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ["~/plugins/i18n.js", "~/plugins/repository.js"],
+  plugins: ["~/plugins/i18n.js", "~/plugins/repository.js", "~/plugins/authorizationTokenInterceptor.js"],
   /*
    ** Nuxt.js modules
    */
