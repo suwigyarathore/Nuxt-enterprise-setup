@@ -1,21 +1,24 @@
-const AUTHORIZATION_TOKEN_KEY = 'AUTHORIZATION_TOKEN';
+const ACCESS_TOKEN_KEY = 'ACCESS_TOKEN';
 
-function getAuthorizationToken() {
-  if (process.client) {
-    return localStorage.getItem(AUTHORIZATION_TOKEN_KEY) || '';
-  }
-  return '';
+function normalize(token) {
+  return token || '';
 }
 
-function setAuthorizationToken(token) {
-  // NOTE: We can set 'Authorization' header here via following expression:
-  // axios$.defaults.headers.common['Authorization'] = `${authorization_token}`
-  if (process.client) {
-    localStorage.setItem(AUTHORIZATION_TOKEN_KEY, token);
-  }
-}
+export default function(axios$, cookies) {
+  // Initialization
+  axios$.setToken(normalize(cookies.get(ACCESS_TOKEN_KEY)));
 
-export default {
-  getAuthorizationToken,
-  setAuthorizationToken
+  return {
+    getAccessToken() {
+      return normalize(cookies.get(ACCESS_TOKEN_KEY));
+    },
+    setAccessToken(token) {
+      const normalizedToken = normalize(token);
+      cookies.set(ACCESS_TOKEN_KEY, normalizedToken);
+      axios$.setToken(normalizedToken);
+    },
+    clearAccessToken() {
+      this.setAccessToken('');
+    }
+  }
 }

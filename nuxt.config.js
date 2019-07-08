@@ -27,7 +27,11 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ["~/plugins/i18n.js", "~/plugins/repository.js", "~/plugins/authorizationTokenInterceptor.js"],
+  plugins: [
+    "~/plugins/i18n.js",
+    "~/plugins/repository.js",
+    "~/plugins/tokenService.js",
+  ],
   /*
    ** Nuxt.js modules
    */
@@ -35,7 +39,8 @@ export default {
     // Doc: https://bootstrap-vue.js.org/docs/
     "bootstrap-vue/nuxt",
     "@nuxtjs/style-resources",
-    ["@nuxtjs/axios", { baseURL: "http://jsonplaceholder.typicode.com" }]
+    ["@nuxtjs/axios", { baseURL: "http://jsonplaceholder.typicode.com" }],
+    ['cookie-universal-nuxt', { alias: 'cookies' }],
   ],
 
   styleResources: {
