@@ -11,7 +11,7 @@ export default ({ app, store }) => {
     fallbackLocale: "en",
     messages: {
       en: require("~/locales/en.json"),
-      fr: require("~/locales/fr.json")
+      nl: require("~/locales/nl.json")
     }
   });
 

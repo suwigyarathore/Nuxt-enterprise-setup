@@ -16,7 +16,7 @@
 
 Engels:  https://nuxt-enterprise.netlify.com/
 
-French: https://nuxt-enterprise.netlify.com/fr
+French: https://nuxt-enterprise.netlify.com/nl
 
 ## Build Setup
 
