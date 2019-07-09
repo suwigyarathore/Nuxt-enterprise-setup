@@ -1,5 +1,5 @@
 import createTokenService from "@/services/tokenService";
 
-export default (ctx, inject) => {
-  inject("tokenService", createTokenService(ctx.$axios, ctx.app.$cookies));
+export default async (ctx, inject) => {
+  inject("tokenService", await createTokenService(ctx.$axios, ctx.app.$cookies));
 };

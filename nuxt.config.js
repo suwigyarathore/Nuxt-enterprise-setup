@@ -71,13 +71,19 @@ export default {
       local: {
         endpoints: {
           logout: {
-            url: '/users/me/signout',
+            url: '/users/me/logins/signout',
             method: 'put',
-            propertyName: 'data'
+            responseTransform: function(data) {
+              console.log(data);
+              return data
+            },
+            tokenType: false
           },
           user: {
             url: '/users/me',
-            method: 'get'
+            method: 'get',
+            propertyName: false,
+            tokenType: false
           },
         },
         tokenRequired: true,
@@ -86,7 +92,8 @@ export default {
       facebook: {
         // TODO: Use real one
         client_id: 'INSERT_YOUR_VALUE',
-        user: false,
+        userinfo_endpoint: false,
+        scope: ['public_profile', 'email'],
         // Client url
         redirect_uri: 'http://localhost:3000/'
       },
@@ -101,13 +108,10 @@ export default {
         // TODO: Use real one
         client_id: 'INSERT_YOUR_VALUE',
         user: false,
-        // Client url
+        // client url
         redirect_uri: 'http://localhost:3000/'
       },
     },
-    redirect: {
-      login: '/?login=1',
-      logout: '/',
-    }
+    redirect: false
   },
 };
